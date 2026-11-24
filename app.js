@@ -1178,7 +1178,7 @@
   }
 
   const ART = [["E10", "No picture", "絵なし", "Use the design without an illustration."], ["SEA", "This month", "季節（毎月かわる）", "A new seasonal picture each month."], ["E2", "Mount Fuji at Sunrise", "富士と日の出", "Snow-capped Mount Fuji rises before a red sun."], ["E4", "Great Wave and Mount Fuji", "大波と富士", "Ocean waves curl around a distant Mount Fuji."], ["F1", "Cranes and Pine", "松と鶴", "Two cranes fly above pine branches."], ["H1", "Goldfish and Waves", "金魚と波", "Red goldfish swim among curling waves."], ["H3", "Torii by the Water", "水辺の鳥居", "A red torii stands beside calm water."], ["H5", "Pagoda and Cherry Blossoms", "五重塔と桜", "A five-story pagoda rises among cherry blossoms."], ["Q1", "Kimono and Paper Umbrella", "着物と和傘", "A woman in a kimono holds a paper umbrella."], ["Q9", "Lucky Cat and Gold Coins", "招き猫と小判", "A lucky cat raises one paw beside gold coins."], ["R1", "Koi and Maple Leaves", "鯉と紅葉", "Koi swim beneath red maple leaves."], ["R5", "Castle and Pine", "城と松", "A Japanese castle stands above pine trees."], ["R8", "Fans and Peonies", "扇と牡丹", "Decorated folding fans rest among peonies."], ["S1b", "Daruma and Plum Blossoms", "達磨と梅", "A red daruma sits among plum blossoms."], ["S4", "Wisteria and Stone Lantern", "藤と灯籠", "Wisteria hangs above a stone lantern."], ["S5", "Moon and Crane", "月と鶴", "A white crane flies beneath a full moon."]];
-  const artId = () => (ART.some((a) => a[0] === S.art) ? S.art : "E10");
+  const artId = () => (S.art && ART.some((a) => a[0] === S.art) ? S.art : "SEA");
   function render() {
     syncCaps();
     document.documentElement.setAttribute("data-art", artId()); document.documentElement.setAttribute("data-month", String(new Date().getMonth() + 1).padStart(2, "0"));
